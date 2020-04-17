@@ -4,7 +4,7 @@ let InitialGameState = ["", "", "", "", "", "", "", "", ""];
 
 let gameActive = true;
 let currentPlayer = "X";
-let gameState = InitialGameState;
+let gameState = [...InitialGameState];
 
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
@@ -80,7 +80,7 @@ function handleCellClick(event) {
 }
 function handleRestartGame() {
   gameActive = true;
-  gameState = InitialGameState;
+  gameState = [...InitialGameState];
   currentPlayer = 'X';
 
   statusDisplay.innerHTML = currentPlayerTurn();
