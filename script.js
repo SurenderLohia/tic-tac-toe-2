@@ -68,7 +68,7 @@ function handleResultValidation() {
   handlePlayerChange();
 }
 function handleCellClick(event) {
-  const clickedCell = event.target;
+  const clickedCell = event.currentTarget;
   const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
 
   if(gameState[clickedCellIndex] !== '' || !gameActive) {
@@ -87,5 +87,5 @@ function handleRestartGame() {
   document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = '');
 }
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+document.querySelectorAll('.game--container').addEventListener('click', handleCellClick);
 document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
